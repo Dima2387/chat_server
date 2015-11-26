@@ -159,7 +159,7 @@
                     main_chat += otvet;
                     to_display(buf);
                     to_log(buf);
-                    send(*itr, buf, 1024, 0);  // Высылаем склеенную строку клиенту
+//                    send(*itr, buf, 1024, 0);  // Высылаем склеенную строку клиенту
 
                     int t = 1;
                     if (t > 0)
