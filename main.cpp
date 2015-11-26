@@ -59,11 +59,11 @@
     //мои функции кончились
     int main()
     {
-       std::string version = "0.0.0.15.beta (26.11.2015)";
-       std::string hello = " Сервер чата " + version + " запущен на порту ";
        struct sockaddr_in addr;
        char buf[1024];
        int port = 3426;
+       std::string version = "0.0.0.15.beta (26.11.2015)";
+       std::string hello = " Сервер чата " + version + " запущен на порту "+ std::to_string(port);;
        int listener = socket(AF_INET, SOCK_STREAM, 0);
        std::string main_chat;
 
@@ -85,7 +85,6 @@
        }
        std::string encoding = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\">";
        std::string info = " Готов к обработке входящих соединений";
-       std::string port2str = std::to_string(port); // конвертирую порт из int в string используя временную переменную
 
        std::ifstream my_file("chat_server.html");
        if (!my_file.good())
