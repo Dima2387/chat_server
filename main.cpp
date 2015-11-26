@@ -59,7 +59,7 @@
     //мои функции кончились
     int main()
     {
-       std::string version = "0.0.0.15.alpha (25.11.2015)";
+       std::string version = "0.0.0.15.beta (26.11.2015)";
        std::string hello = " Сервер чата " + version + " запущен на порту ";
        struct sockaddr_in addr;
        char buf[1024];
@@ -159,7 +159,6 @@
                     main_chat += otvet;
                     to_display(buf);
                     to_log(buf);
-//                    send(*itr, buf, 1024, 0);  // Высылаем склеенную строку клиенту
 
                     int t = 1;
                     if (t > 0)
