@@ -1,4 +1,3 @@
-    #
     #include <cstring>
     #include <sys/types.h>
     #include <sys/socket.h>
@@ -61,8 +60,8 @@
     {
        struct sockaddr_in addr;
        char buf[1024];
-       int port = 3426;
-       std::string version = "0.0.0.15.beta (26.11.2015)";
+       int port = 3425;
+       std::string version = "0.0.0.16.alpha (30.11.2015)";
        std::string hello = " Сервер чата " + version + " запущен на порту "+ std::to_string(port);;
        int listener = socket(AF_INET, SOCK_STREAM, 0);
        std::string main_chat;
@@ -163,8 +162,11 @@
                     if (t > 0)
                     {
                         for (int sfd : clients) {
-                            send(sfd, buf, 1024, 0);
 
+                            if (*itr != sfd)
+                            {
+                            send(sfd, buf, 1024, 0);
+                            }
                             t--;
                         }
 
